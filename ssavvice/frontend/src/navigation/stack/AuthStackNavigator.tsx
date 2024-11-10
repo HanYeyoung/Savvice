@@ -4,12 +4,12 @@ import {createStackNavigator} from '@react-navigation/stack';
 import AuthHomeScreen from '../../screens/auth/AuthHomeScreen';
 import LoginScreen from '../../screens/auth/LoginScreen';
 import SignScreen from '../../screens/auth/SignScreen';
-import {authNavigations} from '../../constants';
+import {authNaviagtions} from '../../constants';
 
 export type AuthStackParamList = {
-  [authNavigations.AUTH_HOME]: undefined;
-  [authNavigations.LOGIN]: undefined;
-  [authNavigations.SIGNUP]: undefined;
+  [authNaviagtions.AUTH_HOME]: undefined;
+  [authNaviagtions.LOGIN]: undefined;
+  [authNaviagtions.SIGNUP]: undefined;
 };
 
 const Stack = createStackNavigator<AuthStackParamList>();
@@ -23,15 +23,15 @@ function AuthStackNavigator() {
         },
         headerStyle: {
           shadowColor: 'gray',
-          backgroundColor: 'white', // red,
+          backgroundColor: 'white',
         },
         headerTitleStyle: {
           fontSize: 15,
         },
-        headerTintColor: 'black', // red
+        headerTintColor: 'black',
       }}>
       <Stack.Screen
-        name={authNavigations.AUTH_HOME}
+        name={authNaviagtions.AUTH_HOME}
         component={AuthHomeScreen}
         options={{
           headerTitle: ' ',
@@ -39,17 +39,17 @@ function AuthStackNavigator() {
         }}
       />
       <Stack.Screen
-        name={authNavigations.LOGIN}
+        name={authNaviagtions.LOGIN}
         component={LoginScreen}
         options={{
-          headerTitle: '로그인',
+          headerTitle: 'Login',
         }}
       />
       <Stack.Screen
-        name={authNavigations.SIGNUP}
+        name={authNaviagtions.SIGNUP}
         component={SignScreen}
         options={{
-          headerTitle: '회원가입',
+          headerTitle: 'Signup',
         }}
       />
     </Stack.Navigator>

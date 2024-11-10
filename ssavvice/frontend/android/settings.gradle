@@ -1,6 +1,28 @@
-pluginManagement { includeBuild("../node_modules/@react-native/gradle-plugin") }
-plugins { id("com.facebook.react.settings") }
-extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
-rootProject.name = 'ssavvice'
+// Plugin management and repository configurations must come first
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        google()
+    }
+    includeBuild("../node_modules/@react-native/gradle-plugin")
+}
+
+// Plugins block comes after pluginManagement
+plugins { 
+    id("com.facebook.react.settings") version "<specific-version>"
+}
+
+// Root project name
+rootProject.name = 'savvice'
+
+// Include app module
 include ':app'
+
+// Include the React Native Gradle plugin build
 includeBuild('../node_modules/@react-native/gradle-plugin')
+
+// Configure the React settings extension (optional)
+extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
+    ex.autolinkLibrariesFromCommand()
+}
