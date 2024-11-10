@@ -9,12 +9,12 @@ import {
   View,
 } from 'react-native';
 import {AuthStackParamList} from '../../navigation/stack/AuthStackNavigator';
-import {authNaviagtions} from '../../constants/navigations';
+import {authNavigations} from '../../constants/navigations';
 import CustomButton from '../../components/CustomButton';
 
 type AuthHomeScreenProps = StackScreenProps<
   AuthStackParamList,
-  typeof authNaviagtions.AUTH_HOME
+  typeof authNavigations.AUTH_HOME
 >;
 
 function AuthHomeScreen({navigation}: AuthHomeScreenProps) {
@@ -29,13 +29,13 @@ function AuthHomeScreen({navigation}: AuthHomeScreenProps) {
       </View>
       <View style={styles.buttonContainer}>
         <CustomButton
-          label="Login"
-          onPress={() => navigation.navigate(authNaviagtions.LOGIN)}
+          label="Log-In"
+          onPress={() => navigation.navigate(authNavigations.LOGIN)}
         />
         <CustomButton
-          label="Sign-up"
+          label="Sign-Up"
           variant="outlined"
-          onPress={() => navigation.navigate(authNaviagtions.SIGNUP)}
+          onPress={() => navigation.navigate(authNavigations.SIGNUP)}
         />
       </View>
     </SafeAreaView>
