@@ -10,11 +10,13 @@ import {
 
 function App() {
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.inputContainer}>
         <Text>Welcome to Savvice</Text>
-        <Button title="Submit" onPress={() => console.log('Hello, Savvice!')} />
-        <TextInput />
+      </View>
+      <View style={styles.container}>
+        <TextInput style={styles.input} />
+        <Text>Hellow world</Text>
       </View>
     </SafeAreaView>
   );
@@ -22,9 +24,20 @@ function App() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+  },
+  input: {
+    flex: 1,
+    borderWidth: 2,
+    borderColor: 'black',
+    height: 100,
+    width: 100,
+  },
+  inputContainer: {
+    flex: 1,
     backgroundColor: 'red',
-    marginHorizontal: 10,
-    marginVertical:10,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
 
