@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Button,
   SafeAreaView,
@@ -6,17 +6,25 @@ import {
   Text,
   TextInput,
   View,
-} from 'react-native';
+}from 'react-native';
 
 function App() {
+  const [name, setName] = useState('');
+
+  const handleChangeInput = (text: string) => {
+    console.log(text);
+    setName(text);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.inputContainer}>
-        <Text>Welcome to Savvice</Text>
-      </View>
-      <View style={styles.container}>
-        <TextInput style={styles.input} />
-        <Text>Hellow world</Text>
+        <Text>Name</Text>
+        <TextInput 
+          style={styles.input}
+          value={name}
+          onChangeText={handleChangeInput}
+        />
       </View>
     </SafeAreaView>
   );
@@ -30,7 +38,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderWidth: 2,
     borderColor: 'black',
-    height: 100,
+    height: 50,
     width: 100,
   },
   inputContainer: {
